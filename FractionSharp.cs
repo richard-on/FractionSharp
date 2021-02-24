@@ -166,9 +166,21 @@ namespace fractionSharp
             return fr1 + fr2;
         }
 
+        public static Fraction operator +(Fraction fr1, int a)
+        {
+            Fraction fr2 = new Fraction(a);
+            return fr1 + fr2;
+        }
+
         public static Fraction operator -(int a, Fraction fr2)
         {
             Fraction fr1 = new Fraction(a);
+            return fr1 - fr2;
+        }
+
+        public static Fraction operator -(Fraction fr1, int a)
+        {
+            Fraction fr2 = new Fraction(a);
             return fr1 - fr2;
         }
 
@@ -178,9 +190,21 @@ namespace fractionSharp
             return fr1 * fr2;
         }
 
+        public static Fraction operator *(Fraction fr1, int a)
+        {
+            Fraction fr2 = new Fraction(a);
+            return fr1 * fr2;
+        }
+
         public static Fraction operator /(int a, Fraction fr2)
         {
             Fraction fr1 = new Fraction(a);
+            return fr1 / fr2;
+        }
+
+        public static Fraction operator /(Fraction fr1, int a)
+        {
+            Fraction fr2 = new Fraction(a);
             return fr1 / fr2;
         }
 

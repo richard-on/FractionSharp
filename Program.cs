@@ -6,8 +6,8 @@ namespace fractionSharp
     {
         static void Main(string[] args)
         {
-            int numerator = 999999999, numerator2 = 999999998;
-            int denominator = 999999999, denominator2 = 999999998;
+            int numerator = 2, numerator2 = 1;
+            int denominator = 24, denominator2 = 15;
 
             try
             {
@@ -28,11 +28,19 @@ namespace fractionSharp
 
                 Console.WriteLine("5" + " + " + fraction2 + " = " + (5 + fraction2));
 
-                Console.WriteLine("5" + " - " + fraction2 + " = " + (5 - fraction));
+                Console.WriteLine(fraction2 + " + " + "5" + " = " + (fraction2 + 5));
+
+                Console.WriteLine("5" + " - " + fraction2 + " = " + (5 - fraction2));
+
+                Console.WriteLine(fraction2 + " - " + "5" + " = " + (fraction2 - 5));
 
                 Console.WriteLine("5" + " * " + fraction2 + " = " + (5 * fraction2));
 
+                Console.WriteLine(fraction2 + " * " + "5" + " = " + (fraction2 * 5));
+
                 Console.WriteLine("5" + " / " + fraction2 + " = " + (5 / fraction2));
+
+                Console.WriteLine(fraction2 + " / " + "5" + " = " + (fraction2 / 5));
 
                 bool res7 = fraction2 == fraction;
                 Console.WriteLine(res7);
