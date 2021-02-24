@@ -123,9 +123,11 @@ namespace fractionSharp
         {
             Fraction a = new Fraction();
             long numerator, denominator;
+
             numerator = checked(fr1.Numerator * lcm(fr1.Denominator, fr2.Denominator) / fr1.Denominator) + (fr2.Numerator * lcm(fr1.Denominator, fr2.Denominator) / fr2.Denominator);
             denominator = lcm(fr1.Denominator, fr2.Denominator);
             a.setFraction((int)numerator, (int)denominator);
+
             return a;
         }
 
@@ -138,16 +140,11 @@ namespace fractionSharp
         {
             Fraction a = new Fraction();
             long numerator, denominator;
-            try
-            {
-                numerator = checked(fr1.Numerator * fr2.Numerator);
-                denominator = checked(fr1.Denominator * fr2.Denominator);
-                a.setFraction((int)numerator, (int)denominator);
-            }
-            catch (OverflowException)
-            {
-                Console.WriteLine("Overflow.");
-            }
+
+            numerator = checked(fr1.Numerator * fr2.Numerator);
+            denominator = checked(fr1.Denominator * fr2.Denominator);
+            a.setFraction((int)numerator, (int)denominator);
+
             return a;
         }
 
@@ -155,16 +152,36 @@ namespace fractionSharp
         {
             Fraction a = new Fraction();
             long numerator, denominator;
+
             numerator = checked(fr1.Numerator * fr2.Denominator);
             denominator = checked(fr1.Denominator * fr2.Numerator);
             a.setFraction((int)numerator, (int)denominator);
+
             return a;
         }
 
         public static Fraction operator +(int a, Fraction fr2)
         {
             Fraction fr1 = new Fraction(a);
+            return fr1 + fr2;
+        }
+
+        public static Fraction operator -(int a, Fraction fr2)
+        {
+            Fraction fr1 = new Fraction(a);
             return fr1 - fr2;
+        }
+
+        public static Fraction operator *(int a, Fraction fr2)
+        {
+            Fraction fr1 = new Fraction(a);
+            return fr1 * fr2;
+        }
+
+        public static Fraction operator /(int a, Fraction fr2)
+        {
+            Fraction fr1 = new Fraction(a);
+            return fr1 / fr2;
         }
 
         public static bool operator ==(Fraction fr1, Fraction fr2)
